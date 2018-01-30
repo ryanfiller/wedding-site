@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+@mixin serif {
+  font-family: 'Arvo', serif;
+  font-weight: 400;
+}
+
+@mixin sans-serif {
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background :white;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.site {
+  &__invite {
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.invite {
+  &__image {
+    width: 100%;
+    display: block;
+    max-width: 40rem;
+    margin: 0 auto;
+    position: relative;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .hover {
+      position: absolute;
+      opacity: 0;
+      transition: .125s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__header {
+    display: block;
+    text-align: center;
+    @include serif;
+    font-size: 3rem;
+    padding: .5em 0;
+    border-bottom: .25rem dashed black;
+  }
+
+  &__body {
+    font-size: 1.75rem;
+
+    p {
+      @include sans-serif;
+    }
+  }
+}
