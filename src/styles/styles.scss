@@ -105,6 +105,8 @@ body {
     font-weight: 300;
     padding: 0 .25em;
     margin-bottom: -.25em;
+    position: relative;
+    top: .125em;
   }
 
   &__verbs {
@@ -119,6 +121,7 @@ body {
     &__ampersand {
       font-size: .8em;
       margin-top: -0.35em;
+      position: initial;
     }
 
     &__verbs {
