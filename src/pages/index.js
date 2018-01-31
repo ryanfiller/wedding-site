@@ -5,12 +5,19 @@ const IndexPage = () => (
   <div className="site__invite invite">
   
     <div className="invite__image">
-      <img className="hover" src="../images/gabbyandryan-hover.jpg" />
-      <img src="../images/gabbyandryan.jpg" />
+      <img className="hover" src="../images/gabbyandryan-hover.png" />
+      <img src="../images/gabbyandryan.png" />
     </div>
   
-    <h1 className="invite__header">
-      Gabby & Ryan Are Getting Married!
+    <h1 className="invite__header header">
+      <span className="header__names">
+        Gabby
+        <span className="header__ampersand">&</span>
+        Ryan
+      </span>
+      <span className="header__verbs">
+        Are Getting Married!
+      </span>
     </h1>
 
     <main className="invite__body">
