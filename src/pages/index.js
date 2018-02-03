@@ -1,32 +1,45 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-const IndexPage = () => (
-  <div className="site__invite invite">
-  
-    <div className="invite__image">
-      <img className="hover" src="../images/gabbyandryan-hover.png" />
-      <img src="../images/gabbyandryan.png" />
-    </div>
-  
-    <h1 className="invite__header header">
-      <span className="header__names">
-        Gabby
-        <span className="header__ampersand">&</span>
-        Ryan
-      </span>
-      <span className="header__verbs">
-        Are Getting Married!
-      </span>
-    </h1>
+import Image from '../components/image.js'
+import Header from '../components/header.js'
 
-    <main className="invite__body">
+import styled from 'styled-components';
+import styles from '../config/styles.js';
+
+const Invite = styled.div`
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Body = styled.div`
+  font-size: 1.75rem;
+
+  p {
+    font-family: ${styles.sansSerif}
+  }
+`;
+
+const IndexPage = () => (
+  <Invite>
+  
+    <Image />
+  
+    <Header />
+
+    <Body>
       <p>
         Check back as we finalize more details.
       </p>
-    </main>
+    </Body>
 
-  </div>
+  </Invite>
 )
 
 export default IndexPage
