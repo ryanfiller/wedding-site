@@ -33,7 +33,7 @@ export default class RSVP extends React.Component {
         return (
             <form
                 id="contact-form"
-                name="contact"
+                name="RSVP"
                 method="post"
                 action="/thanks/"
                 data-netlify="true"
@@ -76,7 +76,7 @@ export default class RSVP extends React.Component {
                         <option value="" disabled selected>Number of children</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
-                        <option value="3">hree</option>
+                        <option value="3">Three</option>
                       </select>
                   </div>
 
