@@ -48,21 +48,47 @@ export default class RSVP extends React.Component {
               >
 
                   <div className="form__row">
-                      <input type="text" name="name" placeholder="Name *" required onChange={this.handleChange} />
-                      <label htmlFor="name">Name</label>
+                      <input type="text" name="names" placeholder="Names *" required onChange={this.handleChange} />
+                      <label htmlFor="names">Names</label>
                   </div>
 
                   <div className="form__row">
-                      <select name="rsvp" required onChange={this.handleChange}>
-                        <option value="" disabled selected>Select your option</option>
-                        <option value="attending">Delightfully attending</option>
-                        <option value="declining">Regretfully declining</option>
+                      <input type="email" name="email" placeholder="Email *" required onChange={this.handleChange} />
+                      <label htmlFor="email">Email</label>
+                  </div>
+
+                  <div className="form__row">
+                    <div className="rsvp" required onChange={this.handleChange}>
+                      <input type="radio"
+                      name="rsvp" value="Attending" />
+                      <label htmlFor="rsvp1">Delightfully attending</label>
+
+                      <input type="radio" 
+                      name="rsvp" value="Declining" />
+                      <label htmlFor="rsvp2">Regretfully declining</label>
+                    </div>
+                  </div>
+
+                  <div className="form__row">
+                      <select name="adults" required onChange={this.handleChange}>
+                        <option value="" disabled selected>Number of adults</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                      </select>
+                  </div>
+
+                  <div className="form__row">
+                      <select name="children" required onChange={this.handleChange}>
+                        <option value="" disabled selected>Number of children</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">hree</option>
                       </select>
                   </div>
 
                   <div className="form__row">
                       <input name="bot-field" hidden />
-                      <input className="button" type="submit" value="Send" />
+                      <input className="button" type="submit" value="RSVP" />
                   </div>
               </form>
           );
