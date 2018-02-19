@@ -9,9 +9,7 @@ function encode(data) {
 export default class RSVP extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
-
-    this.reloadForm = this.reloadForm.bind(this)    
+    this.state = {};  
   }
 
   handleChange = (e) => {
@@ -29,10 +27,6 @@ export default class RSVP extends React.Component {
 
     e.preventDefault();
   };
-
-  reloadForm() {
-      this.setState({submitted: false});
-  }
 
   render(state) {
     if(this.state.submitted != true) {
@@ -95,8 +89,7 @@ export default class RSVP extends React.Component {
     } else {
         return(
             <div className="contact-form__message">
-                Message sent!
-                <a onClick={this.reloadForm}>Send Another?</a>
+                Thank you! We will let you know by email if any detail change.
             </div>
         );
     }
