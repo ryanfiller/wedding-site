@@ -74,6 +74,7 @@ export default class RSVP extends React.Component {
                   <div className="form__row">
                       <select name="children" required onChange={this.handleChange}>
                         <option value="" disabled selected>Number of children</option>
+                        <option value="0">None</option>                        
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
