@@ -10,6 +10,7 @@ const Container = styled.div`
 
     .info {
         flex: 1;
+        align-items: stretch;
     }
 
     .map {
@@ -22,6 +23,10 @@ const Container = styled.div`
 
     @media (max-width: ${styles.break}) {
         display: block;
+
+        .map {
+            height: calc(100vw - 4rem);
+        }
     }
 `;
 

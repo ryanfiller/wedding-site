@@ -5,7 +5,6 @@ import styles from '../config/styles.js';
 
 const GoogleMap = styled.iframe`
   width: 100%;
-  height: 100%;
   border: 0;
 `;
  
