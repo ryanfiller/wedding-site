@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 import styles from '../config/styles.js';
+import { CSSTransitionGroup } from 'react-transition-group'
 
 const Form = styled.form`
     width: 100%;
@@ -95,6 +96,7 @@ const Radio = styled.div`
     div {
         display: flex;
         align-items: center;
+        height: 100%;
 
         input {
             margin-right: 1rem;
@@ -113,6 +115,7 @@ const Radio = styled.div`
 
             span {
                 display: inline-block;
+                font-size: .75em;
             }
 
             @media (max-width: ${styles.smallBreak}) {
@@ -156,11 +159,64 @@ const Dropdown = styled.div`
 
 const Button = styled.button`
     font-family: ${styles.serif};
-    font-size: 1em;
+    font-size: .75em;
     background: white;
-    padding: .25em;
+    padding: .33em;
     border: .05em solid ${styles.black};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: .125em;
+    width: 75%;
+    margin: 0 auto;
+
+    &:before, &:after {
+        content: '';
+        display: block;
+        flex: 1;
+        height: 1.5em;
+        background-size: 22.5%;
+        background-repeat: no-repeat;
+        transition: .2s;
+    }
+
+    &:before {
+        margin-right: .25em;
+        background-image: url('../images/fern1.png');
+        background-position: right;
+    }
+
+    &:after {
+        margin-left: .25em;
+        background-image: url('../images/fern2.png');
+        background-position: left;
+    }
+
+    &:hover, &:focus {
+        cursor: pointer;
+
+        &:before, &:after {
+            background-size: 25%;
+        }
+    }
 `
+
+const ThankYou = styled.div`
+    font-family: ${styles.serif};
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.5em;
+`
+
+const Fade = ({ children }) => (
+    <CSSTransitionGroup
+      transitionName='fade'
+      transitionEnterTimeout={1000}
+      transitionLeaveTimeout={500}
+      >
+      { children }
+    </CSSTransitionGroup>
+  )
 
 
 function encode(data) {
@@ -256,7 +312,9 @@ export default class RSVP extends React.Component {
                 <Row>
                     <Field>
                         <input name="bot-field" hidden />
-                        <Button type="submit" form="contact-form" value="RSVP">RSVP</Button>
+                        <Button type="submit" form="contact-form" value="RSVP">
+                            <span>RSVP</span>
+                        </Button>
                     </Field>
                 </Row>
 
@@ -264,9 +322,9 @@ export default class RSVP extends React.Component {
           );
     } else {
         return(
-            <div className="contact-form__message">
+            <ThankYou>
                 Thank you! We will let you know by email if any detail change.
-            </div>
+            </ThankYou>
         );
     }
   }

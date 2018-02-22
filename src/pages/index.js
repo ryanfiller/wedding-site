@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 import Image from '../components/image.js'
+import Ferns from '../components/ferns.js'
 import Header from '../components/header.js'
 import Location from '../components/location.js'
 import Rsvp from '../components/rsvp.js'
@@ -35,6 +36,8 @@ const IndexPage = () => (
     <Image />
   
     <Header />
+
+    <Ferns />
 
     <Body>
       {/* <Location 
