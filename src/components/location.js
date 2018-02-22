@@ -21,7 +21,7 @@ const Container = styled.div`
         flex-direction: row-reverse;
     }
 
-    @media (max-width: ${styles.break}) {
+    @media (max-width: ${styles.smallBreak}) {
         display: block;
 
         .map {

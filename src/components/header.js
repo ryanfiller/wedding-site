@@ -8,10 +8,10 @@ const H1 = styled.h1`
   font-family: ${styles.serif};
   font-size: 2rem;
   text-transform: uppercase;
+  color: ${styles.black};
 
   padding: 1rem 0;
   margin: 0;
-  border-bottom: .25rem dashed black;
 `;
 
 const Names = styled.span`
@@ -19,7 +19,7 @@ const Names = styled.span`
   font-size: 2em;
   font-weight: 300;
 
-  @media (max-width: ${styles.break}) {
+  @media (max-width: ${styles.smallBreak}) {
     display: block;
   }
 `;
@@ -33,7 +33,7 @@ const Ampersand = styled.span`
   position: relative;
   top: .125em;
 
-  @media (max-width: ${styles.break}) {
+  @media (max-width: ${styles.smallBreak}) {
     display: block;
     font-size: .8em;
     margin-top: -0.35em;
@@ -44,7 +44,7 @@ const Ampersand = styled.span`
 const Verbs = styled.span`
   letter-spacing: .125em;
 
-  @media (max-width: ${styles.break}) {
+  @media (max-width: ${styles.smallBreak}) {
     display: block;
     max-width: 30rem;
   }

@@ -26,15 +26,15 @@ const Hover = styled.img`
     opacity: 1;
   }
 
-  @media (max-width: ${styles.break}) {
+  @media (max-width: ${styles.smallBreak}) {
     opacity: 1;
   }
 `;
 
 const Image = () => (
   <Container>
-      <Hover src="../images/gabbyandryan-hover.png" />
-      <Img src="../images/gabbyandryan.png" />
+      <Hover src="../images/heads-hover.png" />
+      <Img src="../images/heads.png" />
     </Container>
 )
 

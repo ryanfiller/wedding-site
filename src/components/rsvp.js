@@ -7,12 +7,17 @@ const Form = styled.form`
     max-width: 60rem;
     box-sizing: border-box;
     padding: 2rem;
+    margin: 0 auto;
 `
 
 const Row = styled.div`
     display: flex;
 
     margin-bottom: 2rem;
+
+    @media (max-width: ${styles.bigBreak}) {
+        display: block;
+    }
 
     &:last-child {
         margin-bottom: 0;
@@ -21,6 +26,10 @@ const Row = styled.div`
     > * {
         flex: 1;
         margin-right: 2rem;
+
+        @media (max-width: ${styles.bigBreak}) {
+            margin-right: 0;
+        }
 
         &:last-child {
             margin-right: 0;
@@ -32,6 +41,10 @@ const Field = styled.div`
     display: flex;
     flex-direction: column;
     height: 3rem;
+
+    @media (max-width: ${styles.bigBreak}) {
+        margin-bottom: 2rem;
+    }
 
     input {
         font-family: ${styles.sansSerif};
@@ -45,7 +58,6 @@ const Field = styled.div`
 
         &:focus {
             outline: none;
-            border: 2px solid $color-gray;
             margin: 0;
 
             &::-webkit-input-placeholder {
@@ -66,18 +78,20 @@ const Field = styled.div`
         max-height: 0;
         font-weight: bold;
         overflow: hidden;
-        font-size: .6em;
+        font-size: .5em;
         padding-left: 0.5rem;
         flex: 1;
         order: 2;
         display: flex;
         align-items: center;
         transition: .2s;
+        background: ${styles.black};
+        color: white;
+        font-family: ${styles.sansSerif};
     }
 `
 
 const Radio = styled.div`
-    flex: 2;
     div {
         display: flex;
         align-items: center;
@@ -87,13 +101,37 @@ const Radio = styled.div`
         }
 
         label {
-            font-family: ${styles.sansSerif};
+            font-family: ${styles.serif};
             font-size: 1.25rem;
             margin-right: 2rem;
+            display: inline-flex;
+            align-items: center;
 
             &:last-child {
                 margin-right: 0;
             }
+
+            span {
+                display: inline-block;
+            }
+
+            @media (max-width: ${styles.smallBreak}) {
+                display: block;
+                margin-right: 0;
+                margin-bottom: 2rem;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    @media (max-width: ${styles.bigBreak}) {
+        div {
+            display: block;
+            text-align: center;
+            margin-bottom: 2rem;
         }
     }
 `
@@ -106,7 +144,24 @@ const Dropdown = styled.div`
         border: none;
         background-color: white;    
     }
+
+    @media (max-width: ${styles.bigBreak}) {
+        margin-bottom: 2rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 `
+
+const Button = styled.button`
+    font-family: ${styles.serif};
+    font-size: 1em;
+    background: white;
+    padding: .25em;
+    border: .05em solid ${styles.black};
+`
+
 
 function encode(data) {
   return Object.keys(data)
@@ -164,39 +219,44 @@ export default class RSVP extends React.Component {
                 <Row>
                     <Radio>
                         <div className="rsvp" required onChange={this.handleChange}>
-                            <input type="radio"
-                            name="rsvp" value="Attending" />
-                            <label htmlFor="rsvp1">Delightfully<br/>attending</label>
+                            
+                            <label htmlFor="rsvp1">
+                                <input type="radio" name="rsvp" value="Attending" />
+                                <span>Delightfully attending</span>
+                            </label>
 
-                            <input type="radio" 
-                            name="rsvp" value="Declining" />
-                            <label htmlFor="rsvp2">Regretfully<br/>declining</label>
+                            <label htmlFor="rsvp2">
+                                <input type="radio" name="rsvp" value="Declining" />
+                                <span>Regretfully declining</span>
+                            </label>
                         </div>
                     </Radio>
 
-                    <Dropdown>
-                        <select name="adults" required onChange={this.handleChange}>
-                            <option value="" disabled selected>Number of adults</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                        </select>
-                    </Dropdown>
+                    <Row>
+                        <Dropdown>
+                            <select name="adults" required onChange={this.handleChange}>
+                                <option value="" disabled selected>Number of adults</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                            </select>
+                        </Dropdown>
 
-                    <Dropdown>
-                        <select name="children" required onChange={this.handleChange}>
-                            <option value="" disabled selected>Number of children</option>
-                            <option value="0">None</option>                        
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </Dropdown>
+                        <Dropdown>
+                            <select name="children" required onChange={this.handleChange}>
+                                <option value="" disabled selected>Number of children</option>
+                                <option value="0">None</option>                        
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </Dropdown>
+                    </Row>
                 </Row>
 
                 <Row>
                     <Field>
                         <input name="bot-field" hidden />
-                        <input className="button" type="submit" value="RSVP" />
+                        <Button type="submit" form="contact-form" value="RSVP">RSVP</Button>
                     </Field>
                 </Row>
 

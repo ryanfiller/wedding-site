@@ -9,7 +9,11 @@ injectGlobal`
 
 module.exports = {
   
-  break: '40rem',
+  smallBreak: '40rem',
+
+  bigBreak: '50rem',
+
+  black: '#2a2b2d',
 
   serif: '"Arvo", serif',
   
