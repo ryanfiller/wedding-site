@@ -115,7 +115,7 @@ const Radio = styled.div`
 
             span {
                 display: inline-block;
-                font-size: .75em;
+                font-size: 1em;
             }
 
             @media (max-width: ${styles.smallBreak}) {
@@ -125,6 +125,7 @@ const Radio = styled.div`
 
                 &:last-child {
                     margin-right: 0;
+                    margin-bottom: 0;                
                 }
             }
         }

@@ -7,8 +7,9 @@ const H1 = styled.h1`
   text-align: center;
   font-family: ${styles.serif};
   font-size: 2rem;
-  text-transform: uppercase;
+  text-transform: lowercase;
   color: ${styles.black};
+  font-weight: 200;
 
   padding: 1rem 0;
   margin: 0;
@@ -16,24 +17,27 @@ const H1 = styled.h1`
 
 const Names = styled.span`
   display: block;
-  font-size: 2em;
-  font-weight: 300;
+  font-size: 2.25em;
+  letter-spacing: .125em;
+  margin-top: -2em;
 
   @media (max-width: ${styles.smallBreak}) {
     display: block;
+    margin-top: 0;
   }
 `;
 
 const Ampersand = styled.span`
   font-family: ${styles.sansSerif};
-  font-size: 1.5em;
-  font-weight: 300;
-  padding: 0 .25em;
-  margin-bottom: -.25em;
+  font-weight: 100;
+  font-size: 2.5em;
+  padding: 0;
+  margin: 0 -.25em -.25em -.25em;
   position: relative;
-  top: .125em;
+  top: .25em;
 
   @media (max-width: ${styles.smallBreak}) {
+    font-weight: 300;
     display: block;
     font-size: .8em;
     margin-top: -0.35em;
@@ -42,23 +46,26 @@ const Ampersand = styled.span`
 `;
 
 const Verbs = styled.span`
+  display: block;
   letter-spacing: .125em;
+  margin-top: .5em;
 
   @media (max-width: ${styles.smallBreak}) {
-    display: block;
     max-width: 30rem;
   }
 `;
 
+
+
 const Header = () => (
   <H1>
-      <Names>
-        Gabby
-          <Ampersand> & </Ampersand>
-        Ryan
-      </Names>
-      <Verbs> Are Getting Married! </Verbs>
-    </H1>
+    <Names>
+      Gabby
+        <Ampersand> & </Ampersand>
+      Ryan
+    </Names>
+    <Verbs> Are Getting Married! </Verbs>
+  </H1>
 )
 
 export default Header

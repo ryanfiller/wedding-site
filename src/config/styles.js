@@ -15,7 +15,7 @@ module.exports = {
 
   black: '#2a2b2d',
 
-  serif: '"Arvo", serif',
+  serif: '"Rokkitt", serif',
   
   sansSerif: '"Lato", sans-serif'
 

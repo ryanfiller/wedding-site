@@ -21,8 +21,8 @@ const Site = styled.div`
 
 const TemplateWrapper = ({ children }) => (
   <Site>
-    <link href="https://fonts.googleapis.com/css?family=Arvo:400,700" rel="stylesheet"/ >
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Rokkitt:100,200,300" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet" />
     <Helmet
       title="Gabby & Ryan Are Getting Married"
       meta={[

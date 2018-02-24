@@ -30,6 +30,14 @@ const Body = styled.main`
   }
 `;
 
+const P = styled.p`
+  font-family: ${styles.serif};
+  font-size: 1.75em;
+  text-align: center;
+  margin: 0;
+  font-weight: 100;
+`
+
 const IndexPage = () => (
   <Invite>
   
@@ -38,6 +46,10 @@ const IndexPage = () => (
     <Header />
 
     <Ferns />
+
+    <P>
+      Kindly RSVP
+    </P>
 
     <Body>
       {/* <Location 
