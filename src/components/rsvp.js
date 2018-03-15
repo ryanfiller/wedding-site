@@ -324,7 +324,7 @@ export default class RSVP extends React.Component {
     } else {
         return(
             <ThankYou>
-                Thank you! We will let you know by email if any detail change.
+                Thank you! We will let you know by email if any details change.
             </ThankYou>
         );
     }
